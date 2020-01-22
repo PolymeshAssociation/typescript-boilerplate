@@ -52,8 +52,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "semistandard": "^14.2.0"
   }
 }
