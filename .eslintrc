@@ -1,0 +1,78 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "no-unused-vars": "off",
+    "camelcase": "off",
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": true
+      }
+    ],
+    "import/no-unresolved": "off",
+    "no-extra-boolean-cast": "off",
+    "func-names": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 100,
+        "ignoreComments": true,
+        "ignoreStrings": true,
+        "ignoreRegExpLiterals": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "class-methods-use-this": "off",
+    "no-underscore-dangle": "off",
+    "no-confusing-arrow": "off",
+    "arrow-body-style": "off",
+    "no-else-return": "off",
+    "no-plusplus": "off",
+    "no-nested-ternary": "off",
+    "no-restricted-globals": "off",
+    "arrow-parens": "off",
+    "no-multi-str": "off",
+    "implicit-arrow-linebreak": "off",
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "off",
+      {
+        "packageDir": ["../../", "./"]
+      }
+    ],
+    "require-jsdoc": [
+      "warn",
+      {
+        "require": {
+          "FunctionDeclaration": true,
+          "MethodDefinition": true,
+          "ClassDeclaration": true,
+          "ArrowFunctionExpression": true,
+          "FunctionExpression": true
+        }
+      }
+    ],
+    "tsdoc/syntax": "warn"
+  },
+  "plugins": ["@typescript-eslint", "eslint-plugin-tsdoc"],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "extends": ["prettier", "prettier/@typescript-eslint"]
+}
