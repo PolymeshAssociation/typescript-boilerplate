@@ -7,12 +7,25 @@
     "es6": true
   },
   "rules": {
-    "@typescript-eslint/indent": "off"
+    "@typescript-eslint/indent": "off",
+    "require-jsdoc": [
+      "warn",
+      {
+        "require": {
+          "FunctionDeclaration": true,
+          "MethodDefinition": true,
+          "ClassDeclaration": true,
+          "ArrowFunctionExpression": true,
+          "FunctionExpression": true
+        }
+      }
+    ],
+    "tsdoc/syntax": "warn"
   },
   "plugins": ["@typescript-eslint", "eslint-plugin-tsdoc"],
   "parserOptions": {
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "extends": [ "standard", "semistandard", "prettier"]
+  "extends": [ "standard", "semistandard", "plugin:@typescript-eslint/recommended", "prettier"]
 }
