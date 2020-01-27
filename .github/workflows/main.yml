@@ -17,3 +17,9 @@ jobs:
         run: yarn jest
       - name: Run code coverage
         run: echo "We need to add SonarCloud to the project!"
+      - name: Semantic Versioning Release
+        run: echo "We need to set up semantic-release!"
+      - name: Autogenerate Typescript Docs
+        run: yarn build:docs
+      - name: Greenkeeper
+        run: echo "We need to add Greenkeeper to the project!"
