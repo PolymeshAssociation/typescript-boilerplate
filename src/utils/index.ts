@@ -9,7 +9,7 @@ export function checkStringLength(
   value: string,
   variableName: string,
   opts: { minLength?: number; maxLength: number } = { maxLength: 32 }
-) {
+): void {
   const { minLength = 0, maxLength } = opts;
   if (value.length < minLength || value.length > maxLength) {
     throw new Error(
