@@ -18,7 +18,7 @@ jobs:
       - name: Run code coverage
         run: echo "We need to add SonarCloud to the project!"
       - name: Semantic Versioning Release
-        run: echo "We need to set up semantic-release!"
+        run: semantic-release
       - name: Autogenerate Typescript Docs
         run: yarn build:docs
       - name: Greenkeeper
