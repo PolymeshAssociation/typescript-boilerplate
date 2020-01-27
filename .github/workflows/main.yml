@@ -8,14 +8,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Run install!
-      run: yarn install
-    - name: Run linting!
-      run: yarn lint
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+      - uses: actions/checkout@v1
+      - name: Run Linting for project code standards
+        run: yarn lint
+      - name: Compile and Install depedencies
+        run: yarn install
+      - name: Run the testing script
+        run: yarn jest
+      - name: Run code coverage
+        run: |
+          echo We need to add SonarCloud to the project!
