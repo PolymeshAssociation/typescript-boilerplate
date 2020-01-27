@@ -9,6 +9,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+      - env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Compile and Install depedencies
         run: yarn install
       - name: Run Linting for project code standards
