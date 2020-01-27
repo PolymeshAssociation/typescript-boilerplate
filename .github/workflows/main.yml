@@ -9,12 +9,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Run Linting for project code standards
-        run: yarn lint
       - name: Compile and Install depedencies
         run: yarn install
+      - name: Run Linting for project code standards
+        run: yarn lint
       - name: Run the testing script
         run: yarn jest
       - name: Run code coverage
-        run: |
-          echo We need to add SonarCloud to the project!
+        run: echo "We need to add SonarCloud to the project!"
