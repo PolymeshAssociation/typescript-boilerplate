@@ -15,8 +15,6 @@ jobs:
         run: yarn lint
       - name: Run the testing script
         run: yarn jest
-      - name: Run code coverage
-        run: echo "We need to add SonarCloud to the project!"
       - name: Semantic Versioning Release
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -25,3 +23,8 @@ jobs:
         run: yarn build:docs
       - name: Greenkeeper
         run: echo "We need to add Greenkeeper to the project!"
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
