@@ -42,18 +42,34 @@ jobs:
           yarn --frozen-lockfile
           yarn test
 
-  release:
-    name: Building and releasing
+  build:
+    name: Building project
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
           node-version: '10.x'
-      - name: release
+      - name: test
         run: |
           yarn --frozen-lockfile
           yarn build:ts
           cpx package.json dist/package.json
+
+  release:
+    name: Releasing
+    runs-on: ubuntu-latest
+    needs: [lint, test, build]
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
           cd dist
+          yarn --frozen-lockfile
           yarn semantic-release
