@@ -10,7 +10,7 @@ Things included in the repo:
 
 - Typescript (duh)
 - Absolute imports (allow you to `import { foo } from ~/bar;` instead of `import { foo } from ../../../../bar;`. The default character is `~` but it can be changed in `tsconfig.json`)
-- Eslint to enforce code style rules
+- Eslint to enforce code style rules (extending standard JS with enforced semicolons and typescript-eslint)
 - Prettier to format code on save
 - Semantic release for automatic versioning
 - Commitizen
