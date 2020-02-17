@@ -54,4 +54,5 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           cd dist
+          yarn --frozen-lockfile
           yarn semantic-release
