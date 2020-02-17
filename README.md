@@ -19,7 +19,7 @@ Things included in the repo:
 
 ## Scripts
 
-- `yarn build:ts` compiles typescript files into javascript and type declarations. Outputs to `dist/" directory
+- `yarn build:ts` compiles typescript files into javascript and type declarations. Outputs to `dist/` directory
 - `yarn build:docs` builds a documentation page from tsdoc comments in the code. Outputs to `docs/` directory
 - `yarn test` runs tests and outputs the coverage report
 - `yarn commit` runs the commit formatting tool (should replace normal commits)
