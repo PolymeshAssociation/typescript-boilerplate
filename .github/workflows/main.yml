@@ -46,7 +46,7 @@ jobs:
       - name: build
         run: |
           yarn build:ts
-          cpx package.json dist/package.json
+          cp package.json dist/package.json
 
   release:
     name: Releasing
