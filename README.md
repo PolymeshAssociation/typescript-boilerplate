@@ -38,7 +38,7 @@ Things included in the repo:
   - jest: `jest.config.js`
   - semantic-release: `release.config.js`
   - typedoc: `typedoc.json`
-  - github actions: `.github/main.yml
+  - github actions: `.github/main.yml`
 - The CI config assumes a `master` branch for stable releases and a `beta` branch for beta releases. Every time something gets pushed to either of those branches (or any time a pull request is opened to any branch), github actions will run. Semantic-release config makes it so that actual releases are only made on pushes to `master` or `beta`
 - The CI config also adds an extra couple of steps to flatten the file structure that actually gets published. This means that your published package will have the buit files at the root level instead of inside a `dist` folder. Those steps are:
   - copy `package.json` into the `dist` folder after building
