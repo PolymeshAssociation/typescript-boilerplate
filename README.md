@@ -45,5 +45,5 @@ Things included in the repo:
   - `cd` into the `dist` folder
   - install deps into the `dist` folder
   - run `semantic-release` from there
-- In order for automated NPM releases to actually work, you need to add an NPM auth token as a secret in your repo. To do that, go to your repo's `settings -> secrets -> add a new secret` input `NPM_TOKEN` as the secret name and the token you generated on your NPM account in the text area`
+- In order for automated NPM releases to actually work, you need to add an NPM auth token as a secret in your repo. To do that, go to your repo's `settings -> secrets -> add a new secret` input `NPM_TOKEN` as the secret name and the token you generated on your NPM account in the text area
 - If you don't need automated NPM releases, you might want to uninstall `semantic-release` and tweak the github actions yaml file to skip the release step
