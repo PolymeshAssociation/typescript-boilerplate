@@ -23,4 +23,5 @@ Things included in the repo:
 - `yarn test` runs tests and outputs the coverage report
 - `yarn commit` runs the commit formatting tool (should replace normal commits)
 - `yarn semantic-release` runs semantic release to calculate version numbers based on the nature of changes since the last version (used in CI pipelines)
-- `yarn lint` runs the linter on all .ts files and outputs all errors
+- `yarn lint` runs the linter on all .ts(x) and .js(x) files and outputs all errors
+- `yarn format` runs prettier on all .ts(x) and .js(x) files and formats them according to the project standards
