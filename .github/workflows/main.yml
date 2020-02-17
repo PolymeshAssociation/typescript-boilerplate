@@ -1,27 +1,74 @@
 name: CI
 
-on: [push]
+on:
+  push:
+    branches: [master, beta]
+  pull_request:
+    types: [assigned, opened, synchronize, reopened]
 
 jobs:
-  build:
-
+  lint:
+    name: Linting
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-            node-version: '10.x'
-      - name: Compile and Install Dependencies
-        run: yarn install
-      - name: Run Linting for project code standards
-        run: yarn lint
+          node-version: '10.x'
+      - name: lint
+        run: |
+          yarn --frozen-lockfile
+          yarn lint
       - name: Run the testing script
         run: yarn jest
       - name: Semantic Versioning Release
         env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: yarn semantic-release
       - name: Autogenerate Typescript Docs
         run: yarn build:docs
+
+  test:
+    name: Testing
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: test
+        run: |
+          yarn --frozen-lockfile
+          yarn test
+
+  build:
+    name: Building project
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: test
+        run: |
+          yarn --frozen-lockfile
+          yarn build:ts
+          cpx package.json dist/package.json
+
+  release:
+    name: Releasing
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          cd dist
+          yarn --frozen-lockfile
+          yarn semantic-release
