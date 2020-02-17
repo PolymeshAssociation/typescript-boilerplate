@@ -15,19 +15,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '10.x'
+      - name: install dependencies
+        run: yarn --frozen-lockfile
       - name: lint
-        run: |
-          yarn --frozen-lockfile
-          yarn lint
-      - name: Run the testing script
-        run: yarn jest
-      - name: Semantic Versioning Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn semantic-release
-      - name: Autogenerate Typescript Docs
-        run: yarn build:docs
+        run: yarn lint
 
   test:
     name: Testing
@@ -37,10 +28,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '10.x'
+      - name: install dependencies
+        run: yarn --frozen-lockfile
       - name: test
-        run: |
-          yarn --frozen-lockfile
-          yarn test
+        run: yarn test
 
   build:
     name: Building project
@@ -50,9 +41,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '10.x'
-      - name: test
+      - name: install dependencies
+        run: yarn --frozen-lockfile
+      - name: build
         run: |
-          yarn --frozen-lockfile
           yarn build:ts
           cpx package.json dist/package.json
 
@@ -65,11 +57,12 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '10.x'
+      - name: install dependencies
+        run: yarn --frozen-lockfile
       - name: release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           cd dist
-          yarn --frozen-lockfile
           yarn semantic-release
