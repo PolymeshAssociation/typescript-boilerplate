@@ -20,12 +20,14 @@
         }
       }
     ],
-    "tsdoc/syntax": "warn"
+    "simple-import-sort/sort": "error",
+    "sort-imports": "off",
+    "import/order": "off"
   },
-  "plugins": ["@typescript-eslint", "eslint-plugin-tsdoc"],
+  "plugins": ["@typescript-eslint", "simple-import-sort"],
   "parserOptions": {
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "extends": [ "standard", "semistandard", "plugin:@typescript-eslint/recommended", "prettier"]
+  "extends": ["standard", "semistandard", "plugin:@typescript-eslint/recommended", "prettier"]
 }
