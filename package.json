@@ -8,11 +8,11 @@
   "license": "ISC",
   "scripts": {
     "test": "jest --coverage",
-    "build:ts": "ttsc -b --watch",
-    "build:docs": "typedoc --out docs src",
+    "build:ts": "ttsc -b",
+    "build:docs": "typedoc src",
     "commit": "npx git-cz",
     "semantic-release": "semantic-release",
-    "lint": "eslint src --ext .ts",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "format": "cross-env prettier-eslint $PWD\"/src/**/*.{ts,tsx,js,jsx,json,css,md}\" --write"
   },
   "devDependencies": {
@@ -41,10 +41,10 @@
     "prettier": "^1.19.1",
     "prettier-eslint": "^9.0.1",
     "prettier-eslint-cli": "^5.0.0",
-    "semantic-release-cli": "^5.1.1",
+    "semantic-release": "^16.0.3",
     "ts-jest": "^24.3.0",
     "ttypescript": "^1.5.10",
-    "typedoc": "^0.15.6",
+    "typedoc": "^0.16.8",
     "typescript": "3.7.5"
   },
   "config": {
