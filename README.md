@@ -34,7 +34,7 @@ Things included in the repo:
   - lint-staged: `.lintstagedrc`
   - prettier: `.prettierrc`
   - commitlint: `commitlint.config.js`
-  - husky: `husky.config.js`
+  - husky: `.husky`
   - jest: `jest.config.js`
   - semantic-release: `release.config.js`
   - typedoc: `typedoc.json`
