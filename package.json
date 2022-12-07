@@ -4,7 +4,7 @@
   "description": "Template repository for typescript projects",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "author": "Polymath Studios Inc.",
+  "author": "Polymesh Association",
   "license": "ISC",
   "scripts": {
     "test": "jest --coverage",
@@ -24,7 +24,7 @@
     "@typescript-eslint/eslint-plugin": "4.29.0",
     "@typescript-eslint/parser": "4.29.0",
     "@zerollup/ts-transform-paths": "1.7.18",
-    "cross-env": "7.0.3", 
+    "cross-env": "7.0.3",
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-config-semistandard": "16.0.0",
