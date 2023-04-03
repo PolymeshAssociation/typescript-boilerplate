@@ -21,7 +21,7 @@ Things included in the repo:
 ## Scripts
 
 - `yarn build:ts` compiles typescript files into javascript and type declarations. Outputs to `dist/` directory
-- `yarn build:docs` builds a documentation page from tsdoc comments in the code. Outputs to `docs/` directory
+- `yarn build:docs` builds a documentation page from TSDoc comments in the code. Outputs to `docs/` directory
 - `yarn test` runs tests and outputs the coverage report
 - `yarn commit` runs the commit formatting tool (should replace normal commits)
 - `yarn semantic-release` runs semantic release to calculate version numbers based on the nature of changes since the last version (used in CI pipelines)
@@ -41,7 +41,7 @@ Things included in the repo:
   - typedoc: `typedoc.json`
   - github actions: `.github/main.yml`
 - The CI config assumes a `master` branch for stable releases and a `beta` branch for beta releases. Every time something gets pushed to either of those branches (or any time a pull request is opened to any branch), github actions will run. Semantic-release config makes it so that actual releases are only made on pushes to `master` or `beta`
-- The CI config also adds an extra couple of steps to flatten the file structure that actually gets published. This means that your published package will have the buit files at the root level instead of inside a `dist` folder. Those steps are:
+- The CI config also adds an extra couple of steps to flatten the file structure that actually gets published. This means that your published package will have the built files at the root level instead of inside a `dist` folder. Those steps are:
   - copy `package.json` into the `dist` folder after building
   - `cd` into the `dist` folder
   - install deps into the `dist` folder
