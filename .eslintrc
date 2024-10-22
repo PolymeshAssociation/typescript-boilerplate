@@ -13,7 +13,8 @@
     "sort-imports": "off",
     "import/order": "off",
     "no-dupe-class-members": "off",
-    "no-shadow": "error",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
     "arrow-parens": "off",
     "no-useless-constructor": "off",
     "@typescript-eslint/no-useless-constructor": "error"
